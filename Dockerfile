@@ -3,10 +3,11 @@ LABEL maintainer "nancheald@gmail.com"
 # install comman tools
 RUN apk update \
     && apk add git \
-    && apk add python \
+    && apk add python-dev \
     && apk add py2-pip \
     && apk add libevent-dev \
-    && apk add gcc
+    && apk add gcc \
+    && apk add musl-dev
 # download subDomainsBrute
 RUN git clone https://github.com/lijiejie/subDomainsBrute subDomainsBrute
 WORKDIR subDomainsBrute
