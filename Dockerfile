@@ -13,4 +13,4 @@ RUN git clone https://github.com/lijiejie/subDomainsBrute subDomainsBrute
 WORKDIR subDomainsBrute
 # install Dependencies
 RUN pip install dnspython gevent
-ENTRYPOINT ["/usr/bin/python", "/subDomainsBrute/subDomainsBrute.py"]
+ENTRYPOINT ["sh","-c","python /subDomainsBrute/subDomainsBrute.py -o result.txt && cat result.txt"]
